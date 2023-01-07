@@ -37,11 +37,12 @@ export default defineConfig({
   },
   server: {
     host: "localhost",
-    port: process.env.FRONTEND_PORT,
+    port: 3005,
+    // port: process.env.FRONTEND_PORT,
     hmr: hmrConfig,
-    proxy: {
-      "^/(\\?.*)?$": proxyOptions,
-      "^/api(/|(\\?.*)?$)": proxyOptions,
-    },
+    // proxy: {
+    //   "^/(\\?.*)?$": proxyOptions,
+    //   "^/api(/|(\\?.*)?$)": proxyOptions,
+    // },
   },
 });

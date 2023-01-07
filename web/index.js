@@ -7,7 +7,11 @@ import serveStatic from "serve-static";
 const __dirname = new URL(".", import.meta.url).pathname;
 
 const PORT = parseInt(process.env.BACKEND_PORT || process.env.PORT, 10);
-const STATIC_PATH = process.env.NODE_ENV === "production" ? `${__dirname}/frontend/dist` : `${__dirname}/frontend/`;
+
+let STATIC_PATH = process.env.NODE_ENV === "production" ? `${__dirname}frontend/dist` : `${__dirname}frontend/`;
+
+// STATIC PATH is created with a leading /
+STATIC_PATH = STATIC_PATH.substring(1);
 
 const app = express();
 
